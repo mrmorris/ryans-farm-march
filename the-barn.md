@@ -1,8 +1,10 @@
-# Fanciful Blue Barn
+# The big red barn
+
+----
 
 Repairs
 
 * [The Cat](./cat.md)
 * [The Dog](./dog.md)
 * [The Whale](whale.md)
-* [The pond](./the-pond.md)
+* [The Pone](./the-pond.md)
