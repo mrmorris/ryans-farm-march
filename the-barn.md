@@ -1,6 +1,7 @@
-# The Barn
+# MEGA BARN
 
-Welcome to my farm!
+---
+
 
 * [The Cat](./cat.md)
 * [The Dog](./dog.md)
