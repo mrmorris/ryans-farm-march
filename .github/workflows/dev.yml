@@ -25,11 +25,18 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          touch hello-world.md
+          echo "Hello world!" >> hello-world.md
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          path: hello-world.md
 
   test:
     runs-on: ubuntu-latest
+
+    needs: build
 
     steps:
       - uses: actions/checkout@v3
@@ -40,9 +47,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    needs: test
+
+    environment: Production
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
         run: echo Hello, world!
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v4.1.4
+        with:
+          name: artifact
+          path: ./
+          
 
